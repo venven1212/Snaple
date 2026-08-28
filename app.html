@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snaple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="app-body">
+
+  <div class="app-shell">
+    <aside class="app-sidebar">
+      <div class="app-brand">
+        <span class="brand">Snaple</span>
+        <button id="logoutBtn" class="icon-btn" title="Log out">⏻</button>
+      </div>
+
+      <div class="app-tabs">
+        <button class="app-tab active" data-tab="chats">Chats</button>
+        <button class="app-tab" data-tab="friends">Friends</button>
+        <button class="app-tab" data-tab="requests">Requests</button>
+      </div>
+
+      <div id="chatsPanel" class="app-panel">
+        <button id="newGroupBtn" class="btn btn-ghost btn-small btn-full">+ New group</button>
+        <ul id="chatList" class="list"></ul>
+      </div>
+
+      <div id="friendsPanel" class="app-panel hidden">
+        <ul id="friendList" class="list"></ul>
+      </div>
+
+      <div id="requestsPanel" class="app-panel hidden">
+        <form id="searchForm" class="add-friend-form">
+          <input type="text" id="searchInput" placeholder="Find a username">
+          <button type="submit" class="btn btn-primary btn-small">Search</button>
+        </form>
+        <ul id="searchResults" class="list"></ul>
+
+        <p class="section-label">Incoming</p>
+        <ul id="incomingList" class="list"></ul>
+
+        <p class="section-label">Sent</p>
+        <ul id="outgoingList" class="list"></ul>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <div id="emptyState" class="empty-state">
+        <h2>Pick a chat</h2>
+        <p>Or find a friend to start one.</p>
+      </div>
+
+      <div id="threadView" class="thread-view hidden">
+        <header class="thread-header">
+          <div>
+            <h2 id="threadName"></h2>
+            <span id="threadStreak" class="streak-tag hidden">🔥 <span id="threadStreakCount"></span></span>
+          </div>
+        </header>
+
+        <div id="threadMessages" class="thread-messages"></div>
+
+        <form id="messageForm" class="message-form">
+          <button type="button" id="snapBtn" class="icon-btn" title="Send a snap">📸</button>
+          <input type="text" id="messageInput" placeholder="Message" autocomplete="off">
+          <button type="submit" class="btn btn-primary btn-small">Send</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <div id="groupModal" class="modal-backdrop hidden">
+    <div class="modal">
+      <h2>New group</h2>
+      <label>
+        Group name
+        <input type="text" id="groupName" placeholder="weekend plans">
+      </label>
+      <p class="modal-label">Add friends</p>
+      <div id="groupFriendChecks" class="group-friend-checks"></div>
+      <div class="modal-actions">
+        <button id="cancelGroupBtn" class="btn btn-ghost btn-small">Cancel</button>
+        <button id="createGroupBtn" class="btn btn-primary btn-small">Create group</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

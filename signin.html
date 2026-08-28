@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in — Snaple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="auth-body">
+
+  <header class="nav">
+    <a href="index.html" class="brand">Snaple</a>
+    <nav class="nav-links">
+      <span class="auth-switch">New here? <a href="signup.html">Create an account</a></span>
+    </nav>
+  </header>
+
+  <section class="auth-wrap">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="auth-sub">Sign in to see what you missed.</p>
+
+      <form id="signinForm" class="auth-form">
+        <label>
+          Username
+          <input type="text" id="username" placeholder="jordan.k" required>
+        </label>
+        <label>
+          Password
+          <input type="password" id="password" placeholder="Your password" required>
+        </label>
+        <p id="authError" class="auth-error"></p>
+        <button type="submit" class="btn btn-primary btn-full">Sign in</button>
+      </form>
+    </div>
+  </section>
+
+  <script src="config.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
